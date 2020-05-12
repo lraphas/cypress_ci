@@ -1,10 +1,17 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1
+  node: circleci/node@1.1.6
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:            
+            - run: npm install
+            - run: npx cypress run
 workflows:
-  build:
-    jobs:
-      - cypress/install:
-          install: npm install
-      - cypress/run:
-          start: npm start
+    build-and-test:
+      jobs:
+        - build-and-test 
