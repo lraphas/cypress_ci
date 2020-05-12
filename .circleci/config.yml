@@ -4,9 +4,5 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run:
-          install-command: npm install
-          record: true
-          parallel: true
-          parallelism: 2
-          group: 2 machines
+      - cypress/install:
+        install-command: npm install
