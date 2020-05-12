@@ -5,7 +5,7 @@
     "scripts": {
         "cypress:open": "cypress open",
         "cy:run:chrome": "cypress run --browser chrome",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "npx cypress run"
     },
     "devDependencies": {
         "cypress": "^4.5.0"
