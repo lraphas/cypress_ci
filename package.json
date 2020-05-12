@@ -1,0 +1,13 @@
+{
+    "name": "cypress-ci",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "cypress:open": "cypress open",
+        "cy:run:chrome": "cypress run --browser chrome",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "cypress": "^4.5.0"
+    }
+}

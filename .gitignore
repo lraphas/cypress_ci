@@ -1,0 +1,13 @@
+# Compiled source #
+###################
+node_modules
+package-lock.json
+cypress/videos
+cypress/screenshots/
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Trashes
