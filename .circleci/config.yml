@@ -47,11 +47,7 @@ jobs:
             - node_modules
 
       # build project
-      # - run: npm run build
+      - run: npm install
 
       # run code linters
-      # - run: npm run lint
-
-      # run code testes
-      - run: cypress install
-      # - run: npx cypress run
+      - run: npx cypress run
