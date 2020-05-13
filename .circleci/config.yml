@@ -53,4 +53,4 @@ jobs:
       # - run: npm run lint
 
       # run code testes
-      - run: npx run cypress
+      - run: npx cypress run
