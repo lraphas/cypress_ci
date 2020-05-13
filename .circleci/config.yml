@@ -6,6 +6,9 @@ workflows:
     jobs:
       - cypress/run:
           install-command: npm install
+          name: '3 machines'
           record: true
           parallel: true
-          parallelism: 2
+          parallelism: 3
+          group: '3x-electron on CircleCI'
+          start: 'npm run start:ci'
