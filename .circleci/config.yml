@@ -6,10 +6,10 @@ workflows:
     jobs:
       - cypress/install:
           name: 'Cypress install'
-          build: npm install
+          install-command: npm install
 
       - cypress/run:
-          name: '3 machines'
+          name: '2 machines'
           requires:
             - Cypress install
           record: true
