@@ -5,19 +5,13 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          name: 'Cypress install'
-          install-command: npm install
-          post-steps:
-            - run: npx cypress cache path
-            - run: npx cypress cache list
-            - run: npx cypress info
+          build: 'npm install'
 
       - cypress/run:
           name: '3 machines'
           requires:
-            - Cypress install
+            - cypress install
           record: true
           parallel: true
-          parallelism: 3
-          group: '3x-electron on CircleCI'
-          start: 'cypress run --record --key 4942dc1f-de36-49ba-bccd-2ba9487a1aa0'
+          parallelism: 2
+          start: 'npx cypress run'
