@@ -47,26 +47,10 @@ jobs:
             - node_modules
 
       # build project
-      - run: npm run build
+      # - run: npm run build
 
       # run code linters
-      - run: npm run lint
+      # - run: npm run lint
 
-# version: 2.1
-# orbs:
-#   cypress: cypress-io/cypress@1.21.0
-# workflows:
-#   build:
-#     jobs:
-#       - cypress/install:
-#           name: 'Cypress install'
-#           install-command: npm install
-
-#       - cypress/run:
-#           name: '2 machines'
-#           requires:
-#             - Cypress install
-#           record: true
-#           parallel: true
-#           parallelism: 2
-          
+      # run code testes
+      - run: npx run cypress
