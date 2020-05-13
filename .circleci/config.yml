@@ -46,8 +46,6 @@ jobs:
           paths:
             - node_modules
 
-      # build project
-      - run: npm install
-
-      # run code linters
-      - run: npx cypress run
+      - run:
+          name: Run Cypress.io tests with @knapsack-pro/cypress using Knapsack Pro Queue Mode
+          command: $(npm bin)/knapsack-pro-cypress  
