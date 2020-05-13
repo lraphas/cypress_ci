@@ -5,7 +5,7 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          name: 'Linux install'
+          name: 'Cypress install'
           install-command: npm install
           post-steps:
             - run: npx cypress cache path
@@ -15,9 +15,9 @@ workflows:
       - cypress/run:
           name: '3 machines'
           requires:
-            - Linux install
+            - Cypress install
           record: true
           parallel: true
           parallelism: 3
           group: '3x-electron on CircleCI'
-          start: 'npm run start:ci'
+          start: 'npx cypress run'
