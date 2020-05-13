@@ -4,9 +4,9 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run:
-          yarn: true
+      - cypress/run:          
           name: '2 machines'
+          yarn: true
           record: true
           parallel: true
           parallelism: 2
