@@ -1,18 +1,32 @@
-version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1.21.0
-workflows:
-  build:
-    jobs:
-      - cypress/install:
-          name: 'Cypress install'
-          install-command: npm install
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/<language>:<version TAG>
+    parallelism: 2 # run 2 parallel CI nodes
 
-      - cypress/run:
-          name: '2 machines'
-          requires:
-            - Cypress install
-          record: true
-          parallel: true
-          parallelism: 2
+    steps:
+      - checkout
+
+      - run:
+        name: Run Cypress.io tests with @knapsack-pro/cypress using Knapsack Pro Queue Mode
+        command: $(npm bin)/knapsack-pro-cypress
+
+# version: 2.1
+# orbs:
+#   cypress: cypress-io/cypress@1.21.0
+# workflows:
+#   build:
+#     jobs:
+#       - cypress/install:
+#           name: 'Cypress install'
+#           install-command: npm install
+
+#       - cypress/run:
+#           name: '2 machines'
+#           requires:
+#             - Cypress install
+#           record: true
+#           parallel: true
+#           parallelism: 2
           
