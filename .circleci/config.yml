@@ -20,4 +20,4 @@ workflows:
           parallel: true
           parallelism: 3
           group: '3x-electron on CircleCI'
-          start: 'npx cypress run'
+          start: 'cypress run --record --key 4942dc1f-de36-49ba-bccd-2ba9487a1aa0'
