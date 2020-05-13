@@ -4,10 +4,15 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run:          
+      - cypress/install:
+          name: 'Cypress install'
+          install-command: npm install
+
+      - cypress/run:
           name: '2 machines'
-          yarn: true
+          requires:
+            - Cypress install
           record: true
           parallel: true
           parallelism: 2
-
+          
