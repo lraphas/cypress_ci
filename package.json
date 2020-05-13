@@ -8,6 +8,7 @@
         "test": "npx cypress run"
     },
     "devDependencies": {
+        "@knapsack-pro/cypress": "^2.0.0",
         "cypress": "^4.5.0"
     }
 }
