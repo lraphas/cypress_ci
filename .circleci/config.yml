@@ -4,7 +4,8 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install
+      - cypress/install:
+        install-command: 'npm install'
       - cypress/run:
           name: '2 machines'
           requires:
